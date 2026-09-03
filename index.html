@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Marcelo Pocai | Dentista em Campinas</title>
+  <meta name="description" content="Dr. Marcelo Pocai — dentista em Campinas. Atendimento sofisticado e acolhedor. Avaliação 5.0 no Google. Agende sua consulta.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #1a365d;
+      --primary-light: #2c5282;
+      --accent: #2b9e91;
+      --accent-hover: #248a7f;
+      --bg: #faf9f7;
+      --bg-alt: #f0eeeb;
+      --text: #2d3748;
+      --text-light: #5a6577;
+      --white: #ffffff;
+      --shadow: 0 4px 24px rgba(26, 54, 93, 0.08);
+      --shadow-md: 0 8px 32px rgba(26, 54, 93, 0.12);
+      --radius: 12px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250, 249, 247, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(26, 54, 93, 0.06);
+      padding: 0 24px;
+      transition: box-shadow 0.3s;
+    }
+
+    .navbar.scrolled {
+      box-shadow: var(--shadow);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+
+    .nav-brand {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-brand svg {
+      width: 28px;
+      height: 28px;
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-light);
+      font-size: 0.925rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+      transition: background 0.2s, transform 0.2s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--accent-hover) !important;
+      transform: translateY(-1px);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2.5px;
+      background: var(--primary);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--bg);
+      padding: 32px 24px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 8px;
+      animation: fadeSlideDown 0.3s ease;
+    }
+
+    .mobile-menu.active {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(26, 54, 93, 0.06);
+      display: block;
+    }
+
+    .mobile-menu .nav-cta {
+      display: inline-block;
+      text-align: center;
+      margin-top: 16px;
+      padding: 16px 24px;
+      border-bottom: none;
+    }
+
+    @keyframes fadeSlideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 24px 80px;
+      background: linear-gradient(135deg, var(--bg) 0%, #e8f0f8 50%, var(--bg-alt) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(43, 158, 145, 0.06) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(43, 158, 145, 0.1);
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 24px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--text-light);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(43, 158, 145, 0.25);
+    }
+
+    .btn-primary svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white);
+      color: var(--primary);
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: 1.5px solid rgba(26, 54, 93, 0.12);
+      transition: all 0.25s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 480px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-image::after {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      width: 120px;
+      height: 120px;
+      background: rgba(43, 158, 145, 0.12);
+      border-radius: 20px;
+      z-index: -1;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(26, 54, 93, 0.08);
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .stat-number {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section {
+      padding: 100px 24px;
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      max-width: 560px;
+      line-height: 1.7;
+    }
+
+    /* ===== SOBRE ===== */
+    .sobre {
+      background: var(--white);
+    }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .sobre-imagens {
+      position: relative;
+    }
+
+    .sobre-imagens img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+
+    .sobre-imagens .img-main {
+      box-shadow: var(--shadow-md);
+    }
+
+    .sobre-imagens .img-accent {
+      position: absolute;
+      bottom: -32px;
+      right: -24px;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 4px solid var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .sobre-texto h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+
+    .sobre-texto p {
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-size: 1.02rem;
+    }
+
+    .sobre-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 32px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(43, 158, 145, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .feature-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--accent);
+    }
+
+    .feature-text {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--primary);
+      line-height: 1.4;
+    }
+
+    /* ===== SERVIÇOS ===== */
+    .servicos {
+      background: var(--bg);
+    }
+
+    .servicos-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .servicos-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .servico-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .servico-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .servico-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .servico-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .servico-icon {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, rgba(43, 158, 145, 0.1), rgba(43, 158, 145, 0.05));
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .servico-icon svg {
+      width: 28px;
+      height: 28px;
+      color: var(--accent);
+    }
+
+    .servico-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .servico-card p {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    /* ===== PROVA SOCIAL ===== */
+    .prova-social {
+      background: var(--primary);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .prova-social::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(43, 158, 145, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .prova-social .section-label {
+      color: var(--accent);
+    }
+
+    .prova-social .section-title {
+      color: var(--white);
+    }
+
+    .prova-social .section-subtitle {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .prova-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .prova-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .avaliacao-destaque {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .avaliacao-number {
+      font-size: 5rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .avaliacao-stars {
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+
+    .avaliacao-stars svg {
+      width: 28px;
+      height: 28px;
+      fill: #f6c744;
+    }
+
+    .avaliacao-text {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .avaliacao-text strong {
+      color: var(--white);
+    }
+
+    .depoimentos {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .depoimento-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      backdrop-filter: blur(8px);
+    }
+
+    .depoimento-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 16px;
+    }
+
+    .depoimento-stars svg {
+      width: 16px;
+      height: 16px;
+      fill: #f6c744;
+    }
+
+    .depoimento-text {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .depoimento-author {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .depoimento-source {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* ===== CONTATO ===== */
+    .contato {
+      background: var(--bg);
+    }
+
+    .contato-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contato-info {
+      padding-top: 16px;
+    }
+
+    .contato-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .contato-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(43, 158, 145, 0.1);
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contato-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--accent);
+    }
+
+    .contato-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .contato-value {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .contato-value a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .contato-value a:hover {
+      color: var(--accent);
+    }
+
+    .btn-whatsapp-contato {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: var(--white);
+      text-decoration: none;
+      padding: 16px 32px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      margin-top: 8px;
+      transition: all 0.25s;
+    }
+
+    .btn-whatsapp-contato:hover {
+      background: #1da851;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp-contato svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .contato-form {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    .contato-form h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid rgba(26, 54, 93, 0.12);
+      border-radius: 10px;
+      font-size: 1rem;
+      font-family: inherit;
+      color: var(--text);
+      background: var(--bg);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(43, 158, 145, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .form-group input.error,
+    .form-group textarea.error {
+      border-color: #e53e3e;
+    }
+
+    .form-error {
+      font-size: 0.8rem;
+      color: #e53e3e;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .form-group input.error + .form-error,
+    .form-group textarea.error + .form-error {
+      display: block;
+    }
+
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .form-submit:hover {
+      background: var(--accent-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(43, 158, 145, 0.25);
+    }
+
+    .form-submit svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .form-success svg {
+      width: 64px;
+      height: 64px;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .form-success h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 8px;
+    }
+
+    .form-success p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--primary);
+      color: rgba(255, 255, 255, 0.7);
+      padding: 48px 24px 32px;
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-brand {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .footer-info {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .footer-info span {
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-info svg {
+      width: 16px;
+      height: 16px;
+      opacity: 0.6;
+    }
+
+    .footer-copy {
+      width: 100%;
+      text-align: center;
+      font-size: 0.8rem;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .footer-credit {
+      width: 100%;
+      text-align: center;
+      font-size: 0.78rem;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .footer-credit a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    .footer-credit a:hover {
+      color: var(--white);
+    }
+
+    /* ===== WHATSAPP FLUTUANTE ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 200;
+      width: 64px;
+      height: 64px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+      transition: all 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+    }
+
+    .whatsapp-float svg {
+      width: 34px;
+      height: 34px;
+      fill: white;
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== MAPA ===== */
+    .mapa {
+      background: var(--white);
+    }
+
+    .mapa-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .mapa-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    .mapa-container {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 32px;
+    }
+
+    .mapa-container iframe {
+      display: block;
+      width: 100%;
+      min-height: 450px;
+    }
+
+    .mapa-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-mapa {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s;
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    .btn-mapa:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(43, 158, 145, 0.25);
+    }
+
+    .btn-mapa svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .btn-mapa-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 1.5px solid rgba(26, 54, 93, 0.15);
+    }
+
+    .btn-mapa-outline:hover {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+      box-shadow: 0 6px 20px rgba(26, 54, 93, 0.2);
+    }
+
+    /* ===== RESPONSIVO ===== */
+    @media (max-width: 1024px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .hero-image img {
+        height: 360px;
+      }
+
+      .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .sobre-imagens .img-accent {
+        right: 16px;
+        width: 160px;
+        height: 160px;
+      }
+
+      .servicos-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .depoimentos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contato-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      section {
+        padding: 72px 20px;
+      }
+
+      .hero {
+        padding: 96px 20px 64px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1.05rem;
+      }
+
+      .hero-image img {
+        height: 280px;
+      }
+
+      .hero-stats {
+        gap: 24px;
+      }
+
+      .stat-number {
+        font-size: 1.4rem;
+      }
+
+      .servicos-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .depoimentos {
+        grid-template-columns: 1fr;
+      }
+
+      .avaliacao-number {
+        font-size: 3.5rem;
+      }
+
+      .contato-form {
+        padding: 28px 20px;
+      }
+
+      .sobre-features {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-info {
+        justify-content: center;
+      }
+
+      .mapa-container iframe {
+        min-height: 320px;
+      }
+
+      .mapa-links {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-mapa {
+        justify-content: center;
+      }
+
+      .btn-whatsapp-contato {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn-primary, .btn-secondary {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        Dr. Marcelo Pocai
+      </a>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#avaliacoes">Avaliações</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#localizacao">Localização</a></li>
+        <li><a href="https://wa.me/5519993061477?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta" class="nav-cta" target="_blank" rel="noopener">Agendar Consulta</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#sobre" class="mobile-link">Sobre</a>
+    <a href="#servicos" class="mobile-link">Serviços</a>
+    <a href="#avaliacoes" class="mobile-link">Avaliações</a>
+    <a href="#contato" class="mobile-link">Contato</a>
+    <a href="#localizacao" class="mobile-link">Localização</a>
+    <a href="https://wa.me/5519993061477?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta" class="nav-cta mobile-link" target="_blank" rel="noopener">Agendar Consulta</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Avaliação 5.0 no Google
+        </div>
+        <h1>Seu sorriso merece um atendimento <span>sofisticado e acolhedor</span></h1>
+        <p>Dentista em Campinas com avaliação impecável. Tratamentos modernos, ambiente humanizado e resultados que você pode ver no espelho.</p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5519993061477?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta" class="btn-primary" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a href="#servicos" class="btn-secondary">Ver Serviços</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">5.0</span>
+            <span class="stat-label">Avaliação Google</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="fotos/consultorio1.jpg" alt="Consultório do Dr. Marcelo Pocai em Campinas" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="sobre" id="sobre">
+    <div class="section-inner">
+      <div class="sobre-grid">
+        <div class="sobre-imagens reveal">
+          <img src="fotos/recepcao1.jpg" alt="Recepção do consultório" class="img-main">
+          <img src="fotos/recepcao2.jpg" alt="Espaço de espera" class="img-accent">
+        </div>
+        <div class="sobre-texto reveal">
+          <p class="section-label">Sobre o Dr. Marcelo</p>
+          <h3>Odontologia com excelência e empatia</h3>
+          <p>Com atendimento personalizado e foco no conforto do paciente, o Dr. Marcelo Pocai combina técnica de ponta com uma escuta atenta. Cada tratamento é pensado para ser seguro, eficiente e transformador.</p>
+          <p>O consultório em Campinas oferece um ambiente sofisticado e acolhedor — onde você se sente em boas mãos desde a primeira visita.</p>
+          <div class="sobre-features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <span class="feature-text">Atendimento humanizado e sem dor</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <span class="feature-text">Horários flexíveis para sua comodidade</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="feature-text">Tecnologia moderna e equipamentos de última geração</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+              </div>
+              <span class="feature-text">Preços transparentes, sem surpresas</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="servicos" id="servicos">
+    <div class="section-inner">
+      <div class="servicos-header reveal">
+        <p class="section-label">Especialidades</p>
+        <h2 class="section-title">Tratamentos completos para toda a família</h2>
+        <p class="section-subtitle">Do check-up à transformação do seu sorriso — tudo com a mesma excelência e cuidado.</p>
+      </div>
+      <div class="servicos-grid">
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 00-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 00-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <h3>Limpeza e Profilaxia</h3>
+          <p>Remoção de tártaro e polimento para manter gengivas saudáveis e um sorriso sempre fresco.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="4"/></svg>
+          </div>
+          <h3>Clareamento Dental</h3>
+          <p>Técnicas seguras para um sorriso visivelmente mais branco, sem comprometer o esmalte.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>
+          </div>
+          <h3>Implantes Dentários</h3>
+          <p>Reposição de dentes perdidos com próteses fixas e estáveis, devolvidando функциção e estética.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <h3>Ortodontia</h3>
+          <p>Aparelhos tradicionais e alinhadores invisíveis para alinhar dentes com conforto e discreção.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Tratamento de Canal</h3>
+          <p>Fim da dor preservando o dente natural com técnicas modernas e indolores.</p>
+        </div>
+        <div class="servico-card reveal">
+          <div class="servico-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Odontopediatria</h3>
+          <p>Primeiras visitas ao dentista com acolhimento de verdade, criando uma relação positiva com a saúde bucal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROVA SOCIAL -->
+  <section class="prova-social" id="avaliacoes">
+    <div class="section-inner">
+      <div class="prova-header reveal">
+        <p class="section-label">Avaliações</p>
+        <h2 class="section-title">O que nossos pacientes dizem</h2>
+        <p class="section-subtitle">A confiança de quem já passou por aqui é a nossa maior prova de qualidade.</p>
+      </div>
+      <div class="avaliacao-destaque reveal">
+        <div class="avaliacao-number">5.0</div>
+        <div class="avaliacao-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="avaliacao-text">Avaliação perfeita no Google</p>
+      </div>
+      <div class="depoimentos">
+        <div class="depoimento-card reveal">
+          <div class="depoimento-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="depoimento-text">"Atendimento impecável! O Dr. Marcelo é extremamente atencioso e o resultado do clareamento ficou incrível. Super recomendo!"</p>
+          <p class="depoimento-author">Ana C.</p>
+          <p class="depoimento-source">Google Reviews</p>
+        </div>
+        <div class="depoimento-card reveal">
+          <div class="depoimento-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="depoimento-text">"Tenho pavor de dentista e o Dr. Marcelo conseguiu me deixar totalmente tranquila. Profissional excepcional!"</p>
+          <p class="depoimento-author">Maria Fernanda S.</p>
+          <p class="depoimento-source">Google Reviews</p>
+        </div>
+        <div class="depoimento-card reveal">
+          <div class="depoimento-stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="depoimento-text">"Fiz o implante e ficou perfeito. O consultório é lindo e o atendimento é de outro nível. Nota 10!"</p>
+          <p class="depoimento-author">Ricardo M.</p>
+          <p class="depoimento-source">Google Reviews</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="contato" id="contato">
+    <div class="section-inner">
+      <div class="contato-grid">
+        <div class="contato-info reveal">
+          <p class="section-label">Contato</p>
+          <h2 class="section-title">Vamos conversar?</h2>
+          <p class="section-subtitle" style="margin-bottom: 40px;">Entre em contato para agendar sua consulta ou tirar qualquer dúvida. Estamos prontos para ajudar.</p>
+          <div class="contato-item">
+            <div class="contato-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <p class="contato-label">Telefone / WhatsApp</p>
+              <p class="contato-value"><a href="https://wa.me/5519993061477" target="_blank" rel="noopener">(19) 99306-1477</a></p>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <p class="contato-label">Endereço</p>
+              <p class="contato-value">R. dos Alecrins, 282 — Campinas, SP</p>
+            </div>
+          </div>
+          <div class="contato-item">
+            <div class="contato-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <p class="contato-label">Horário de Atendimento</p>
+              <p class="contato-value">Seg a Sex: 8h — 18h | Sáb: 8h — 12h</p>
+            </div>
+          </div>
+          <a href="https://wa.me/5519993061477?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta" class="btn-whatsapp-contato" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Falar no WhatsApp
+          </a>
+        </div>
+        <div class="contato-form reveal" id="contactForm">
+          <h3>Envie uma mensagem</h3>
+          <form id="form" novalidate>
+            <div class="form-group">
+              <label for="nome">Nome completo</label>
+              <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+              <p class="form-error">Por favor, informe seu nome.</p>
+            </div>
+            <div class="form-group">
+              <label for="telefone">Telefone / WhatsApp</label>
+              <input type="tel" id="telefone" name="telefone" placeholder="(19) 99999-9999" required>
+              <p class="form-error">Por favor, informe seu telefone.</p>
+            </div>
+            <div class="form-group">
+              <label for="mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" placeholder="Como podemos ajudar?" required></textarea>
+              <p class="form-error">Por favor, escreva sua mensagem.</p>
+            </div>
+            <button type="submit" class="form-submit">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              Enviar pelo WhatsApp
+            </button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h4>Mensagem enviada!</h4>
+            <p>Em breve entraremos em contato pelo WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <section class="mapa" id="localizacao">
+    <div class="section-inner">
+      <div class="mapa-header reveal">
+        <p class="section-label">Localização</p>
+        <h2 class="section-title">Onde nos encontrar</h2>
+        <p class="section-subtitle">Estamos na R. dos Alecrins, 282, em Campinas. Pelo mapa abaixo, você confere a localização exata do consultório.</p>
+      </div>
+      <div class="mapa-container reveal">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.0!2d-47.0609!3d-22.8184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQ5JzA2LjIiUyA0N8KwMDMnMzkuMiJX!5e0!3m2!1spt-BR!2sbr!4v1725376000000!5m2!1spt-BR!2sbr&q=Dr+Marcelo+Pocai+Campinas"
+          width="100%" 
+          height="450" 
+          style="border:0; border-radius: 16px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Localização do Dr. Marcelo Pocai em Campinas">
+        </iframe>
+      </div>
+      <div class="mapa-links reveal">
+        <a href="https://www.google.com/maps?cid=17329258591104968803" class="btn-mapa" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Abrir no Google Maps
+        </a>
+        <a href="https://wa.me/5519993061477?text=Ol%C3%A1%2C%20como%20chego%20at%C3%A9%20o%20consult%C3%B3rio%3F" class="btn-mapa btn-mapa-outline" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          Tirar dúvida no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">Dr. Marcelo Pocai</p>
+      <div class="footer-info">
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (19) 99306-1477
+        </span>
+        <span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          R. dos Alecrins, 282 — Campinas, SP
+        </span>
+      </div>
+      <p class="footer-copy">&copy; 2026 Dr. Marcelo Pocai. Todos os direitos reservados.</p>
+      <p class="footer-credit">Landpage criada por <a href="https://landpage-axione.vercel.app" target="_blank" rel="noopener">Axione</a></p>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5519993061477?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20consulta" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+      });
+    });
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Form
+    const form = document.getElementById('form');
+    const formSuccess = document.getElementById('formSuccess');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      let valid = true;
+
+      const fields = [
+        { id: 'nome', validate: v => v.trim().length >= 2 },
+        { id: 'telefone', validate: v => v.trim().length >= 8 },
+        { id: 'mensagem', validate: v => v.trim().length >= 5 }
+      ];
+
+      fields.forEach(field => {
+        const input = document.getElementById(field.id);
+        if (!field.validate(input.value)) {
+          input.classList.add('error');
+          valid = false;
+        } else {
+          input.classList.remove('error');
+        }
+      });
+
+      if (!valid) return;
+
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const mensagem = document.getElementById('mensagem').value.trim();
+
+      const text = `Olá! Meu nome é *${nome}*.\n\nTelefone: ${telefone}\n\n${mensagem}`;
+
+      window.open(`https://wa.me/5519993061477?text=${encodeURIComponent(text)}`, '_blank');
+
+      form.style.display = 'none';
+      formSuccess.style.display = 'block';
+    });
+
+    // Auto-format phone
+    document.getElementById('telefone').addEventListener('input', function(e) {
+      let v = e.target.value.replace(/\D/g, '');
+      if (v.length > 11) v = v.slice(0, 11);
+      if (v.length > 6) {
+        v = `(${v.slice(0,2)}) ${v.slice(2,7)}-${v.slice(7)}`;
+      } else if (v.length > 2) {
+        v = `(${v.slice(0,2)}) ${v.slice(2)}`;
+      } else if (v.length > 0) {
+        v = `(${v}`;
+      }
+      e.target.value = v;
+    });
+
+    // Remove error on input
+    document.querySelectorAll('.form-group input, .form-group textarea').forEach(el => {
+      el.addEventListener('input', () => el.classList.remove('error'));
+    });
+  </script>
+</body>
+</html>
